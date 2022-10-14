@@ -1,0 +1,55 @@
+body {
+  font: 20px Trebuchet MS, sans-serif;
+}
+
+header {
+  border-bottom: 1px solid;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+#user-header>.user-bar,
+#guest-header>.buttons {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+header button {
+  padding: 3px 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+main {
+  min-height: 80vh;
+  padding: 20px;
+}
+
+main h2 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+main p {
+  margin: 10px 0;
+}
+
+main p::first-letter {
+  padding-left: 30px;
+}
+
+footer {
+  border-top: 1px solid;
+  padding: 5px 20px;
+}
+
+footer h2 {
+  font-size: 1.3em;
+}
