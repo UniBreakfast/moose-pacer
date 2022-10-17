@@ -189,6 +189,8 @@ function hasButton(line) {
 function makeForm(descriptor) {
   const form = document.createElement('form')
 
+  form.action = 'javascript:'
+
   for (const each of parse(descriptor).titles)
     form.append(makeTitle(each))
 
