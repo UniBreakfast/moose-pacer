@@ -1,6 +1,6 @@
 import { makeRegBtn } from './js/auth/reg-btn.js'
-import { makeLoginBtn } from './js/auth/login-btn.js'
-import { makeLogoutBtn } from './js/auth/logout-btn.js'
+import { makeLoginBtn } from './js/auth/log-in-btn.js'
+import { makeLogoutBtn } from './js/auth/log-out-btn.js'
 import { isLoggedIn } from './js/auth/is-logged-in.js'
 import { getUserData } from './js/auth/get-user-data.js'
 
@@ -25,5 +25,9 @@ logoutBtn.onlogout = () => headerSwitch.checked = false
 main()
 
 async function main() {
-  headerSwitch.checked = await isLoggedIn()
+  if (await isLoggedIn()) {
+    const {name} = await getUserData()
+    userLabel.innerText = name
+    headerSwitch.checked = true
+  }
 }
