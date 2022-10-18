@@ -15,7 +15,7 @@ document.getElementById('login-btn').replaceWith(loginBtn)
 document.getElementById('logout-btn').replaceWith(logoutBtn)
 
 loginBtn.onlogin = async () => {
-  const {name} = await getUserData()
+  const { name } = await getUserData()
   userLabel.innerText = name
   headerSwitch.checked = true
 }
@@ -26,7 +26,7 @@ main()
 
 async function main() {
   if (await isLoggedIn()) {
-    const {name} = await getUserData()
+    const { name } = await getUserData()
     userLabel.innerText = name
     headerSwitch.checked = true
   }

@@ -11,3 +11,14 @@ const modal = makeModal()
 const regForm = makeForm(descriptor)
 
 modal.append(regForm)
+
+regForm.onsubmit = async () => {
+  const users = JSON.parse(localStorage.getItem('test_auth_module_users')) || []
+  const newUser = {name: regForm.username.value}
+
+  users.push(newUser)
+
+  localStorage.setItem('test_auth_module_users', JSON.stringify(users))
+
+  modal.close()
+}

@@ -7,7 +7,7 @@ function makeLogoutBtn() {
   logoutBtn.id = 'logout-btn'
 
   logoutBtn.onclick = () => {
-    localStorage.removeItem('test_auth_module')
+    localStorage.removeItem('test_auth_module_user')
     logoutBtn.onlogout?.()
   }
 
