@@ -9,6 +9,8 @@ export const loginModal = {
 import { makeModal } from './modal.js'
 import { makeForm } from './form.js'
 import { descriptor } from './login-form.js'
+import { isKnown } from './is-known-user.js'
+import { aknowledge } from './aknowledge-user.js'
 
 const modal = makeModal()
 const loginForm = makeForm(descriptor)
@@ -18,10 +20,9 @@ modal.append(loginForm)
 
 loginForm.onsubmit = async () => {
   const user = { name: loginForm.username.value }
-  const users = JSON.parse(localStorage.getItem('test_auth_module_users')) || []
-
-  if (users.some(u => u.name === user.name)) {
-    localStorage.setItem('test_auth_module_user', JSON.stringify(user))
+  
+  if (await isKnown(user)) {
+    await aknowledge(user)
     modal.close()
     loginModal.onlogin?.()
   }

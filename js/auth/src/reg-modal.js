@@ -6,6 +6,8 @@ export const regModal = {
 import { makeModal } from './modal.js'
 import { makeForm } from './form.js'
 import { descriptor } from './reg-form.js'
+import { getUsers } from './get-users.js'
+import { storeUsers } from './store-users.js'
 
 const modal = makeModal()
 const regForm = makeForm(descriptor)
@@ -13,12 +15,12 @@ const regForm = makeForm(descriptor)
 modal.append(regForm)
 
 regForm.onsubmit = async () => {
-  const users = JSON.parse(localStorage.getItem('test_auth_module_users')) || []
+  const users = await getUsers()
   const newUser = {name: regForm.username.value}
 
   users.push(newUser)
 
-  localStorage.setItem('test_auth_module_users', JSON.stringify(users))
-
+  await storeUsers(users)
+  
   modal.close()
 }

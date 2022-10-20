@@ -1,5 +1,7 @@
 export { makeLogoutBtn }
 
+import { forgetUser } from './forget-user.js'
+
 function makeLogoutBtn() {
   const logoutBtn = document.createElement('button')
 
@@ -7,7 +9,7 @@ function makeLogoutBtn() {
   logoutBtn.id = 'logout-btn'
 
   logoutBtn.onclick = () => {
-    localStorage.removeItem('test_auth_module_user')
+    forgetUser()
     logoutBtn.onlogout?.()
   }
 

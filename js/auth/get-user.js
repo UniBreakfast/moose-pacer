@@ -1,6 +1,6 @@
-export { getUserData }
+export { getUser }
 
-async function getUserData() {
+async function getUser() {
   const storedAuth = localStorage.getItem('test_auth_module_user')
 
   if (!storedAuth) return {}
