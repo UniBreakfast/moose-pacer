@@ -2,7 +2,7 @@ import { makeRegBtn } from './js/auth/reg-btn.js'
 import { makeLoginBtn } from './js/auth/log-in-btn.js'
 import { makeLogoutBtn } from './js/auth/log-out-btn.js'
 import { isLoggedIn } from './js/auth/is-logged-in.js'
-import { getUser } from './js/auth/get-user-data.js'
+import { getUser } from './js/auth/get-user.js'
 
 const headerSwitch = document.getElementById('header-switch')
 const userLabel = document.querySelector('.user-bar>h2')
